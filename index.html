@@ -1,12 +1,749 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Fox Smart — Helpdesk</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <h1>ola mundo</h1>
+
+<!-- ══════════ LANDING PAGE ══════════ -->
+<div id="page-landing">
+  <div class="land-noise"></div>
+  <div class="land-glow-1"></div>
+  <div class="land-glow-2"></div>
+
+  <!-- Nav da Landing -->
+  <header class="land-header">
+    <div class="land-logo">
+      <div class="land-logo-icon">🦊</div>
+      <span class="land-logo-text">Fox <em>Smart</em></span>
+    </div>
+    <button class="land-btn-enter" onclick="showLoginModal()">Entrar no Portal →</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="land-hero">
+    <div class="land-hero-tag">🦊 FOX SMART HELPDESK</div>
+    <h1 class="land-hero-title">Suporte técnico<br><span>inteligente</span><br>para sua equipe</h1>
+    <p class="land-hero-sub">Plataforma completa de abertura e gestão de chamados, com assistente de IA integrado para resolver problemas com agilidade e eficiência.</p>
+    <div class="land-hero-btns">
+      <button class="land-cta-primary" onclick="showLoginModal()">Acessar o Portal</button>
+      <a href="#features" class="land-cta-ghost">Conheça os recursos ↓</a>
+    </div>
+    <div class="land-hero-stats">
+      <div class="land-stat"><span class="land-stat-num">99%</span><span class="land-stat-label">Uptime</span></div>
+      <div class="land-stat-divider"></div>
+      <div class="land-stat"><span class="land-stat-num">IA</span><span class="land-stat-label">Integrada</span></div>
+      <div class="land-stat-divider"></div>
+      <div class="land-stat"><span class="land-stat-num">24/7</span><span class="land-stat-label">Disponível</span></div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="land-features" id="features">
+    <div class="land-section-tag">// RECURSOS</div>
+    <h2 class="land-section-title">Tudo que sua TI precisa</h2>
+    <div class="land-features-grid">
+      <div class="land-feat-card">
+        <div class="land-feat-icon">📋</div>
+        <h3>Abertura de Chamados</h3>
+        <p>Registre problemas técnicos com detalhamento completo — categoria, prioridade, departamento e descrição detalhada.</p>
+      </div>
+      <div class="land-feat-card">
+        <div class="land-feat-icon">🤖</div>
+        <h3>Suporte com IA</h3>
+        <p>Assistente inteligente disponível 24/7 para triagem inicial, diagnóstico e orientações de solução imediata.</p>
+      </div>
+      <div class="land-feat-card">
+        <div class="land-feat-icon">📁</div>
+        <h3>Histórico Completo</h3>
+        <p>Acompanhe todos os chamados em tempo real — abertos, em andamento e resolvidos — com filtros avançados.</p>
+      </div>
+      <div class="land-feat-card">
+        <div class="land-feat-icon">📊</div>
+        <h3>Relatórios e Métricas</h3>
+        <p>Painel administrativo com gráficos e indicadores em tempo real para tomada de decisão baseada em dados.</p>
+      </div>
+      <div class="land-feat-card">
+        <div class="land-feat-icon">👥</div>
+        <h3>Gestão de Equipe</h3>
+        <p>Cadastre colaboradores, defina perfis de acesso e acompanhe a performance do time de suporte.</p>
+      </div>
+      <div class="land-feat-card">
+        <div class="land-feat-icon">🔐</div>
+        <h3>Acesso por Perfil</h3>
+        <p>Controle total de acesso — usuários veem seus chamados, admins gerenciam tudo com visão 360°.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="land-how">
+    <div class="land-section-tag">// COMO FUNCIONA</div>
+    <h2 class="land-section-title">Simples e eficiente</h2>
+    <div class="land-steps">
+      <div class="land-step">
+        <div class="land-step-num">01</div>
+        <div class="land-step-content">
+          <h3>Abra um chamado</h3>
+          <p>Descreva o problema, defina a prioridade e envie. Leva menos de 2 minutos.</p>
+        </div>
+      </div>
+      <div class="land-step-arrow">→</div>
+      <div class="land-step">
+        <div class="land-step-num">02</div>
+        <div class="land-step-content">
+          <h3>IA faz a triagem</h3>
+          <p>O assistente inteligente analisa e pode sugerir soluções imediatas enquanto aguarda o suporte.</p>
+        </div>
+      </div>
+      <div class="land-step-arrow">→</div>
+      <div class="land-step">
+        <div class="land-step-num">03</div>
+        <div class="land-step-content">
+          <h3>Suporte atende</h3>
+          <p>A equipe de TI recebe, prioriza e resolve com acompanhamento em tempo real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="land-cta-section">
+    <div class="land-cta-box">
+      <h2>Pronto para começar?</h2>
+      <p>Acesse o portal de suporte Fox Smart agora mesmo.</p>
+      <button class="land-cta-primary large" onclick="showLoginModal()">Entrar no Portal →</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="land-footer">
+    <div class="land-logo" style="opacity:.5">
+      <div class="land-logo-icon" style="width:22px;height:22px;font-size:11px">🦊</div>
+      <span class="land-logo-text" style="font-size:16px">Fox <em>Smart</em></span>
+    </div>
+    <span class="land-footer-copy">© 2025 Fox Smart — Todos os direitos reservados</span>
+  </footer>
+</div>
+
+<!-- ══════════ MODAL LOGIN ══════════ -->
+<div class="login-modal-overlay" id="login-modal-overlay" onclick="closeLoginModal(event)">
+  <div class="login-card">
+    <button class="login-close-btn" onclick="hideLoginModal()">✕</button>
+    <div class="login-logo">
+      <div class="logo-icon">🦊</div>
+      <div class="logo-text">Fox <span>Smart</span></div>
+    </div>
+    <h1 class="login-title">Bem-vindo de volta</h1>
+    <p class="login-sub">Acesse o portal de suporte Fox Smart</p>
+
+    <div class="login-error" id="login-error">❌ E-mail ou senha incorretos. Tente novamente.</div>
+
+    <label class="field-label">E-mail</label>
+    <div class="field-wrap">
+      <input type="email" id="login-email" placeholder="seu@email.com" autocomplete="email">
+    </div>
+
+    <label class="field-label">Senha</label>
+    <div class="field-wrap">
+      <input type="password" id="login-pw" placeholder="••••••••">
+      <button class="toggle-pw" onclick="togglePw()" id="toggle-pw-btn">👁</button>
+    </div>
+
+    <button class="btn-login" onclick="doLogin()">Entrar no Portal</button>
+  </div>
+</div>
+
+<!-- ══════════ APP ══════════ -->
+<div id="app">
+  <!-- NavBar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo-icon">🦊</div>
+      <div class="nav-brand-name">Fox <span>Smart</span></div>
+    </div>
+
+    <div class="nav-links">
+      <button class="nav-btn active" id="nav-open" onclick="showView('open')">
+        <span class="nav-icon">📋</span><span>Abrir Chamado</span>
+      </button>
+      <button class="nav-btn" id="nav-hist" onclick="showView('hist')">
+        <span class="nav-icon">📁</span><span>Histórico</span>
+      </button>
+      <button class="nav-btn" id="nav-ai" onclick="showView('ai')">
+        <span class="nav-icon">🤖</span><span>Suporte IA</span>
+      </button>
+      <button class="nav-btn" id="nav-admin" onclick="showView('admin')" style="display:none">
+        <span class="nav-icon">⚙️</span><span>Painel Admin</span>
+      </button>
+      <button class="nav-btn" id="nav-attendant" onclick="showView('attendant')" style="display:none">
+        <span class="nav-icon">🎧</span><span>Atendimento</span>
+      </button>
+      <button class="nav-btn" id="nav-reports" onclick="showView('reports')" style="display:none">
+        <span class="nav-icon">📊</span><span>Relatórios</span>
+      </button>
+    </div>
+
+    <div class="nav-right">
+      <div class="nav-badge">
+        <div class="nav-avatar" id="nav-avatar">U</div>
+        <span class="nav-user-name" id="nav-name">Usuário</span>
+        <span class="nav-role-badge" id="nav-role">User</span>
+      </div>
+      <button class="btn-logout" onclick="doLogout()">Sair</button>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="app-content">
+
+    <!-- ── VIEW: ABRIR CHAMADO ── -->
+    <div class="view active" id="view-open">
+      <div class="page-header">
+        <h1 class="page-title">📋 Abrir Chamado</h1>
+        <p class="page-sub">Registre um novo chamado de suporte para atendimento</p>
+      </div>
+
+      <div class="success-toast" id="ticket-success">
+        ✅ Chamado registrado! Número: <strong id="ticket-num"></strong>
+      </div>
+
+      <div class="card">
+        <div class="ticket-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome completo</label>
+              <input type="text" id="tf-name" placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+              <label>E-mail de contato</label>
+              <input type="email" id="tf-email" placeholder="email@empresa.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Departamento</label>
+              <select id="tf-dept">
+                <option value="">Selecione...</option>
+                <option>TI</option><option>Financeiro</option><option>RH</option>
+                <option>Comercial</option><option>Operacional</option><option>Outros</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Categoria</label>
+              <select id="tf-cat">
+                <option value="">Selecione...</option>
+                <option>Hardware</option><option>Software</option><option>Rede</option>
+                <option>Acesso / Senha</option><option>E-mail</option><option>Impressora</option>
+                <option>Sistema ERP</option><option>Outros</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Título do chamado</label>
+            <input type="text" id="tf-title" placeholder="Descreva o problema em poucas palavras">
+          </div>
+          <div class="form-group">
+            <label>Descrição detalhada</label>
+            <textarea id="tf-desc" placeholder="Descreva o problema com o máximo de detalhes possível..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Prioridade</label>
+            <div class="priority-btns">
+              <button class="priority-btn sel-low" id="pb-low" onclick="setPrio('low')">🟢 Baixa</button>
+              <button class="priority-btn" id="pb-med" onclick="setPrio('med')">🟡 Média</button>
+              <button class="priority-btn" id="pb-high" onclick="setPrio('high')">🔴 Alta</button>
+            </div>
+          </div>
+          <div>
+            <button class="btn-submit" onclick="submitTicket()">📨 Enviar Chamado</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── VIEW: HISTÓRICO ── -->
+    <div class="view" id="view-hist">
+      <div class="page-header">
+        <h1 class="page-title">📁 Histórico de Chamados</h1>
+        <p class="page-sub" id="hist-sub">Seus chamados registrados</p>
+      </div>
+      <div class="hist-filters">
+        <input class="filter-search" type="text" placeholder="🔍  Buscar chamado..." oninput="filterTickets(this.value)">
+        <select class="filter-select" onchange="filterStatus(this.value)">
+          <option value="">Todos os status</option>
+          <option value="open">Aberto</option>
+          <option value="progress">Em andamento</option>
+          <option value="closed">Resolvido</option>
+        </select>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <table class="tickets-table" id="tickets-table">
+          <thead>
+            <tr>
+              <th>Chamado</th><th>Título</th><th>Categoria</th>
+              <th>Prioridade</th><th>Status</th><th>Data</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="tickets-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── VIEW: SUPORTE IA ── -->
+    <div class="view" id="view-ai">
+      <div class="page-header">
+        <h1 class="page-title">🤖 Suporte IA</h1>
+        <p class="page-sub">Assistente inteligente para suporte técnico imediato</p>
+      </div>
+      <div class="ai-wrap">
+        <div class="ai-chat">
+          <div class="ai-messages" id="ai-messages">
+            <div class="msg ai">
+              <span class="msg-sender">🦊 Fox IA</span>
+              <div class="msg-bubble">Olá! Sou o assistente de suporte da Fox Smart. Como posso ajudar você hoje?</div>
+              <span class="msg-time">Agora</span>
+            </div>
+          </div>
+          <div class="ai-input-wrap">
+            <textarea class="ai-input" id="ai-input" placeholder="Digite sua pergunta ou descreva o problema..." rows="2"
+              onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendAI();}"></textarea>
+            <button class="btn-send" onclick="sendAI()">➤</button>
+          </div>
+        </div>
+        <div class="ai-sidebar">
+          <div class="ai-quick-card">
+            <div class="ai-quick-title">⚡ Perguntas rápidas</div>
+            <button class="quick-btn" onclick="quickAsk('Meu computador não liga, o que faço?')">💻 Computador não liga</button>
+            <button class="quick-btn" onclick="quickAsk('Esqueci minha senha do Windows, como redefinir?')">🔐 Esqueci minha senha</button>
+            <button class="quick-btn" onclick="quickAsk('Não consigo me conectar à internet, o que verificar?')">📡 Sem conexão à internet</button>
+            <button class="quick-btn" onclick="quickAsk('Impressora não está imprimindo, como resolver?')">🖨️ Impressora com problema</button>
+            <button class="quick-btn" onclick="quickAsk('Como faço backup dos meus arquivos?')">💾 Fazer backup</button>
+          </div>
+          <div class="ai-quick-card">
+            <div class="ai-quick-title">📊 Seus chamados</div>
+            <div class="ai-stats" id="ai-stats"></div>
+          </div>
+          <div class="ai-quick-card">
+            <div class="ai-quick-title">💡 Dica do dia</div>
+            <p style="font-size:12px;color:var(--grey-400);line-height:1.65" id="ai-tip"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── VIEW: ADMIN ── -->
+    <div class="view" id="view-admin">
+      <div class="page-header">
+        <h1 class="page-title">⚙️ Painel Administrativo</h1>
+        <p class="page-sub">Gerenciamento completo do helpdesk</p>
+      </div>
+
+      <div class="success-toast" id="admin-toast" style="margin-bottom:20px"></div>
+
+      <div class="admin-grid">
+        <div class="stat-card"><div class="stat-icon orange">📋</div><div><div class="stat-num" id="s-total">0</div><div class="stat-label">Total chamados</div></div></div>
+        <div class="stat-card"><div class="stat-icon blue">🔵</div><div><div class="stat-num" id="s-open">0</div><div class="stat-label">Abertos</div></div></div>
+        <div class="stat-card"><div class="stat-icon yellow">⏳</div><div><div class="stat-num" id="s-prog">0</div><div class="stat-label">Em andamento</div></div></div>
+        <div class="stat-card"><div class="stat-icon green">✅</div><div><div class="stat-num" id="s-done">0</div><div class="stat-label">Resolvidos</div></div></div>
+        <div class="stat-card"><div class="stat-icon orange">👥</div><div><div class="stat-num" id="s-users">0</div><div class="stat-label">Funcionários</div></div></div>
+        <div class="stat-card"><div class="stat-icon blue">🔴</div><div><div class="stat-num" id="s-high">0</div><div class="stat-label">Alta prioridade</div></div></div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;padding:0;overflow:hidden;">
+        <div style="padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;">
+          <div class="card-title" style="margin-bottom:0">📋 Todos os Chamados</div>
+        </div>
+        <table class="tickets-table" id="admin-tickets-table" style="margin-top:12px">
+          <thead>
+            <tr>
+              <th>Chamado</th><th>Usuário</th><th>Título</th><th>Categoria</th>
+              <th>Prioridade</th><th>Status</th><th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="admin-tickets-body"></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div class="card-title" style="margin-bottom:0">👥 Gerenciar Usuários</div>
+          <button class="btn-new-user" id="btn-new-user" onclick="openUserModal(null)">➕ Novo Usuário</button>
+        </div>
+        <div class="users-list" id="users-list"></div>
+      </div>
+    </div>
+
+    <!-- ── VIEW: RELATÓRIOS ── -->
+    <div class="view" id="view-reports">
+      <div class="page-header">
+        <h1 class="page-title">📊 Relatórios</h1>
+        <p class="page-sub">Métricas e gráficos dos chamados do dia e histórico geral</p>
+      </div>
+
+      <!-- Cards de métricas do dia -->
+      <div class="report-date-bar">
+        <span class="report-date-label">📅 Hoje — <span id="report-today-date"></span></span>
+        <button class="btn-refresh-report" onclick="renderReports()">↻ Atualizar</button>
+      </div>
+
+      <div class="report-kpi-grid">
+        <div class="report-kpi-card accent">
+          <div class="report-kpi-label">Chamados hoje</div>
+          <div class="report-kpi-num" id="rk-today">0</div>
+          <div class="report-kpi-sub" id="rk-today-sub">abertos hoje</div>
+        </div>
+        <div class="report-kpi-card">
+          <div class="report-kpi-label">Abertos</div>
+          <div class="report-kpi-num blue" id="rk-open">0</div>
+          <div class="report-kpi-sub">aguardando atendimento</div>
+        </div>
+        <div class="report-kpi-card">
+          <div class="report-kpi-label">Em andamento</div>
+          <div class="report-kpi-num yellow" id="rk-prog">0</div>
+          <div class="report-kpi-sub">em resolução</div>
+        </div>
+        <div class="report-kpi-card">
+          <div class="report-kpi-label">Resolvidos</div>
+          <div class="report-kpi-num green" id="rk-done">0</div>
+          <div class="report-kpi-sub">concluídos</div>
+        </div>
+        <div class="report-kpi-card">
+          <div class="report-kpi-label">Alta prioridade</div>
+          <div class="report-kpi-num red" id="rk-high">0</div>
+          <div class="report-kpi-sub">prioridade alta</div>
+        </div>
+        <div class="report-kpi-card">
+          <div class="report-kpi-label">Taxa de resolução</div>
+          <div class="report-kpi-num green" id="rk-rate">0%</div>
+          <div class="report-kpi-sub">chamados resolvidos</div>
+        </div>
+      </div>
+
+      <!-- Gráficos -->
+      <div class="report-charts-grid">
+        <!-- Gráfico de barras: por status -->
+        <div class="card report-chart-card">
+          <div class="report-chart-title">Chamados por Status</div>
+          <div class="report-chart-sub">Distribuição geral de todos os chamados</div>
+          <div id="chart-status"></div>
+        </div>
+
+        <!-- Gráfico de pizza: por prioridade -->
+        <div class="card report-chart-card">
+          <div class="report-chart-title">Distribuição por Prioridade</div>
+          <div class="report-chart-sub">Proporção de prioridades dos chamados</div>
+          <div id="chart-priority" style="display:flex;justify-content:center;margin-top:12px"></div>
+        </div>
+
+        <!-- Gráfico de barras: por categoria -->
+        <div class="card report-chart-card" style="grid-column:span 2">
+          <div class="report-chart-title">Chamados por Categoria</div>
+          <div class="report-chart-sub">Volume de atendimentos por tipo de problema</div>
+          <div id="chart-category"></div>
+        </div>
+
+        <!-- Gráfico de barras horizontais: por departamento -->
+        <div class="card report-chart-card">
+          <div class="report-chart-title">Por Departamento</div>
+          <div class="report-chart-sub">Quantidade de chamados por setor</div>
+          <div id="chart-dept"></div>
+        </div>
+
+        <!-- Gráfico de linha: últimos 7 dias -->
+        <div class="card report-chart-card">
+          <div class="report-chart-title">Evolução — Últimos 7 dias</div>
+          <div class="report-chart-sub">Volume de chamados abertos por dia</div>
+          <div id="chart-timeline"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── VIEW: ATENDENTE ── -->
+    <div class="view" id="view-attendant">
+      <div class="page-header">
+        <h1 class="page-title">🎧 Painel de Atendimento</h1>
+        <p class="page-sub">Triagem, atendimento e encaminhamento de chamados</p>
+      </div>
+
+      <div class="success-toast" id="admin-toast" style="margin-bottom:20px"></div>
+
+      <!-- KPIs -->
+      <div class="admin-grid">
+        <div class="stat-card"><div class="stat-icon blue">🔵</div><div><div class="stat-num" id="at-open">0</div><div class="stat-label">Abertos</div></div></div>
+        <div class="stat-card"><div class="stat-icon yellow">⏳</div><div><div class="stat-num" id="at-prog">0</div><div class="stat-label">Em atendimento</div></div></div>
+        <div class="stat-card"><div class="stat-icon green">✅</div><div><div class="stat-num" id="at-done">0</div><div class="stat-label">Resolvidos</div></div></div>
+        <div class="stat-card"><div class="stat-icon purple">📤</div><div><div class="stat-num" id="at-fwd">0</div><div class="stat-label">Encaminhados</div></div></div>
+      </div>
+
+      <!-- Fila de atendimento -->
+      <div class="card" style="margin-bottom:20px;padding:0;overflow:hidden;">
+        <div style="padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;">
+          <div class="card-title" style="margin-bottom:0">📋 Fila de Atendimento</div>
+          <span style="font-size:11px;color:var(--grey-500);font-family:'IBM Plex Mono',monospace">Ordenado por prioridade</span>
+        </div>
+        <table class="tickets-table" style="margin-top:12px">
+          <thead>
+            <tr>
+              <th>Chamado</th><th>Solicitante</th><th>Título</th><th>Categoria</th>
+              <th>Prioridade</th><th>Status</th><th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="at-queue-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Recém resolvidos -->
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="padding:20px 24px 12px;">
+          <div class="card-title" style="margin-bottom:0">✅ Recentemente Resolvidos</div>
+        </div>
+        <table class="tickets-table">
+          <thead>
+            <tr><th>Chamado</th><th>Título</th><th>Solicitante</th><th>Resolução</th><th>Data</th></tr>
+          </thead>
+          <tbody id="at-recent-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ MODAL ENCAMINHAR CHAMADO ══════════ -->
+<div class="modal-overlay" id="forward-modal-overlay">
+  <div class="modal" style="max-width:480px">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">📤 Encaminhar Chamado</div>
+        <div style="color:var(--grey-600);font-size:12px;margin-top:4px;font-family:'IBM Plex Mono',monospace" id="fwd-ticket-ref"></div>
+      </div>
+      <button class="btn-close" onclick="closeForwardModal()">✕</button>
+    </div>
+    <div style="margin-bottom:20px">
+      <div class="fwd-info-box">
+        <span style="font-size:18px">ℹ️</span>
+        <span>Encaminhe o chamado quando o problema não puder ser resolvido internamente e precisar da intervenção de outro departamento especializado.</span>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:16px">
+      <label style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey-500);font-family:'IBM Plex Mono',monospace;display:block;margin-bottom:8px">Departamento de destino *</label>
+      <select id="fwd-dept" style="width:100%;padding:10px 14px;background:var(--surface-2);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:var(--white);font-size:14px">
+        <option value="">Selecione o departamento...</option>
+        <option>TI — Infraestrutura</option>
+        <option>TI — Suporte Hardware</option>
+        <option>TI — Redes e Conectividade</option>
+        <option>Financeiro</option>
+        <option>RH</option>
+        <option>Comercial</option>
+        <option>Operacional</option>
+        <option>Fornecedor Externo</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-bottom:24px">
+      <label style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey-500);font-family:'IBM Plex Mono',monospace;display:block;margin-bottom:8px">Motivo do encaminhamento *</label>
+      <textarea id="fwd-reason" placeholder="Ex: Problema físico na impressora — necessita técnico especializado em hardware. Não é possível resolver via software." style="width:100%;min-height:100px;padding:10px 14px;background:var(--surface-2);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:var(--white);font-size:13px;resize:vertical;box-sizing:border-box;font-family:'IBM Plex Mono',monospace"></textarea>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button class="btn-icon" onclick="closeForwardModal()" style="padding:10px 20px">Cancelar</button>
+      <button class="btn-submit" onclick="confirmForward()" style="background:var(--purple,#8B5CF6)">📤 Confirmar Encaminhamento</button>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modal-title">Chamado #001</div>
+        <div style="color:var(--grey-600);font-size:12px;margin-top:4px;font-family:'IBM Plex Mono',monospace" id="modal-date"></div>
+      </div>
+      <button class="btn-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="detail-grid" id="modal-grid"></div>
+    <div id="modal-desc-wrap">
+      <div class="detail-label" style="font-size:9px;color:var(--grey-600);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;font-family:'IBM Plex Mono',monospace">Descrição</div>
+      <div class="detail-desc" id="modal-desc"></div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap" id="modal-actions"></div>
+  </div>
+</div>
+
+<!-- ══════════ MODAL CRIAR/EDITAR USUÁRIO ══════════ -->
+<div class="modal-overlay" id="user-modal-overlay">
+  <div class="modal modal-user">
+    <div class="modal-header">
+      <div class="modal-title" id="user-modal-title">➕ NOVO USUÁRIO</div>
+      <button class="btn-close" onclick="closeUserModal()">✕</button>
+    </div>
+
+    <div class="user-form-grid">
+      <div class="photo-upload-wrap">
+        <div class="photo-preview" id="um-photo-preview" onclick="document.getElementById('um-photo-input').click()">
+          <span style="font-size:28px;opacity:.4">📷</span>
+        </div>
+        <input type="file" id="um-photo-input" accept="image/*" style="display:none" onchange="handlePhotoUpload(this)">
+        <button class="btn-photo-upload" onclick="document.getElementById('um-photo-input').click()">
+          📷 Carregar foto
+        </button>
+        <p style="font-size:10px;color:var(--grey-600);text-align:center;margin-top:4px;font-family:'IBM Plex Mono',monospace">JPG, PNG · máx. 2MB</p>
+      </div>
+
+      <div class="user-form-fields">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome completo *</label>
+            <input type="text" id="um-name" placeholder="João Silva">
+          </div>
+          <div class="form-group">
+            <label>E-mail *</label>
+            <input type="email" id="um-email" placeholder="joao@empresa.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Senha *</label>
+            <input type="text" id="um-pass" placeholder="Senha de acesso">
+          </div>
+          <div class="form-group">
+            <label>Telefone</label>
+            <input type="text" id="um-phone" placeholder="(11) 99999-9999">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Departamento</label>
+            <select id="um-dept">
+              <option value="">Selecione...</option>
+              <option>TI</option><option>Financeiro</option><option>RH</option>
+              <option>Comercial</option><option>Operacional</option><option>Outros</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Cargo / Função</label>
+            <input type="text" id="um-position" placeholder="Ex: Analista de TI">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Perfil de acesso</label>
+            <select id="um-role">
+              <option value="user">👤 Usuário</option>
+              <option value="attendant">🎧 Atendente</option>
+              <option value="admin">🛡️ Admin</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Cor do avatar</label>
+            <input type="color" id="um-color" value="#3B82F6" style="height:42px;cursor:pointer;">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Bio / Observações</label>
+          <textarea id="um-bio" placeholder="Informações adicionais sobre o colaborador..." style="min-height:70px"></textarea>
+        </div>
+
+        <!-- PERMISSÕES -->
+        <div class="form-group" id="um-permissions-wrap">
+          <label style="display:flex;align-items:center;justify-content:space-between">
+            <span>Permissões de Acesso</span>
+            <button type="button" onclick="resetPermissionsToRole()" style="font-size:10px;padding:3px 8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:3px;color:var(--grey-400);cursor:pointer;font-family:'IBM Plex Mono',monospace">↺ Padrão do perfil</button>
+          </label>
+          <div id="um-permissions-list" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;padding:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.07)">
+      <button class="btn-icon" onclick="closeUserModal()" style="padding:10px 20px">Cancelar</button>
+      <button class="btn-submit" onclick="saveUser()">💾 Salvar Usuário</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ MODAL CHAT DO CHAMADO ══════════ -->
+<div class="modal-overlay" id="chat-modal-overlay">
+  <div class="modal chat-modal">
+    <div class="modal-header chat-modal-header">
+      <div class="chat-modal-info">
+        <div class="modal-title" id="chat-modal-title">💬 Chat — FSX-001</div>
+        <div class="chat-modal-sub" id="chat-modal-sub"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="chat-online-dot" id="chat-online-dot"></div>
+        <button class="btn-icon btn-end-chat" id="btn-end-chat" onclick="openEndChatModal()" style="display:none;font-size:11px;padding:6px 12px;border-color:rgba(255,71,71,0.4);color:#FF4747">🔴 Finalizar Chat</button>
+        <button class="btn-close" onclick="closeChatModal()">✕</button>
+      </div>
+    </div>
+
+    <div class="chat-body" id="chat-body"></div>
+
+    <div class="chat-input-bar">
+      <textarea
+        class="chat-textarea"
+        id="chat-input"
+        placeholder="Digite sua mensagem..."
+        rows="1"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChatMessage();}"
+        oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,120)+'px'"
+      ></textarea>
+      <button class="chat-send-btn" onclick="sendChatMessage()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ MODAL FINALIZAR CHAT ══════════ -->
+<div class="modal-overlay" id="end-chat-modal-overlay">
+  <div class="modal" style="max-width:480px">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">🔴 Finalizar Atendimento</div>
+        <div style="color:var(--grey-600);font-size:12px;margin-top:4px;font-family:'IBM Plex Mono',monospace" id="end-chat-ref"></div>
+      </div>
+      <button class="btn-close" onclick="closeEndChatModal()">✕</button>
+    </div>
+    <div style="margin-bottom:16px">
+      <div class="fwd-info-box" style="border-color:rgba(255,71,71,0.25);background:rgba(255,71,71,0.06)">
+        <span style="font-size:18px">⚠️</span>
+        <span>Ao finalizar, o chat será encerrado e um protocolo de atendimento será gerado automaticamente para registro.</span>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:24px">
+      <label style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey-500);font-family:'IBM Plex Mono',monospace;display:block;margin-bottom:8px">Resumo do atendimento (opcional)</label>
+      <textarea id="end-chat-summary" placeholder="Ex: Problema de hardware identificado e resolvido. Equipamento substituído com sucesso." style="width:100%;min-height:90px;padding:10px 14px;background:var(--surface-2);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:var(--white);font-size:13px;resize:vertical;box-sizing:border-box;font-family:'IBM Plex Mono',monospace"></textarea>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button class="btn-icon" onclick="closeEndChatModal()" style="padding:10px 20px">Cancelar</button>
+      <button class="btn-submit" onclick="confirmEndChat()" style="background:#c0392b">🔴 Confirmar Encerramento</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ MODAL PROTOCOLO ══════════ -->
+<div class="modal-overlay" id="protocol-modal-overlay">
+  <div class="modal" style="max-width:520px">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" style="color:var(--green)">✅ Atendimento Encerrado</div>
+        <div style="color:var(--grey-600);font-size:12px;margin-top:4px;font-family:'IBM Plex Mono',monospace">Protocolo gerado com sucesso</div>
+      </div>
+      <button class="btn-close" onclick="closeProtocolModal()">✕</button>
+    </div>
+    <div id="protocol-content" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:6px;padding:20px;margin-bottom:20px;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.8"></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button class="btn-icon" onclick="copyProtocol()" style="padding:10px 20px">📋 Copiar Protocolo</button>
+      <button class="btn-icon" onclick="downloadProtocolPDF()" style="padding:10px 20px;border-color:rgba(0,87,255,0.4);color:#4d90fe">⬇️ Baixar PDF</button>
+      <button class="btn-submit" onclick="closeProtocolModal()">OK, entendido</button>
+    </div>
+  </div>
+</div>
+
+<script src="java.js"></script>
 </body>
 </html>
